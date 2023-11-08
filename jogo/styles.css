@@ -7,7 +7,9 @@
   body {
     height: 100vh;
     display: flex;
-    background: #060AB2;
+    /* background: #060AB2; */
+    background: black
+    
   }
   
   .memory-game {
@@ -46,10 +48,13 @@
     padding: 20px;
     position: absolute;
     border-radius: 5px;
-    background: #1C7CCC;
+    /* background: #1C7CCC; */
+    background: gray;
     backface-visibility: hidden;
   }
   
   .front-face {
     transform: rotateY(180deg);
   }
+
+

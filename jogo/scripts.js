@@ -35,7 +35,7 @@ function disableCards() {
 }
 
 function unflipCards() {
-  lockBoard = true;git
+  lockBoard = true;
 
   setTimeout(() => {
     firstCard.classList.remove('flip');
