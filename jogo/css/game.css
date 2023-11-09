@@ -19,6 +19,7 @@
 
   
   .memory-game {
+    float: right;
     width: 640px;
     height: 640px;
     margin: auto;
