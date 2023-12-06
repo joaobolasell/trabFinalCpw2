@@ -71,15 +71,33 @@ function resetBoard() {
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 
+//----------------------------------  -------------------------------------------------
+
+// Obtém os parâmetros de consulta da URL
+const urlParams = new URLSearchParams(window.location.search);
+const nome = urlParams.get("nome");
+
+
+// Exibe os dados na página
+document.getElementById("nomeResultado").textContent = nome;
+
+//----------------------------------------
+
+
+
+
 
 
 function pausarJogo(){
-  alert("Clique em OK para Continuar o Jogo");
   
-}
+  pause();
+  alert("Jogo pausado, clique em OK para continuar");
+  start();
+  }
+  
 
 
-
+/* ------------------------------- Cronometro ------------------------------- */
 
 
 "use strict";
