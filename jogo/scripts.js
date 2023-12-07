@@ -2,11 +2,20 @@
 // seleciona todos os elementos com a classe memory-card
 const cards = document.querySelectorAll('.memory-card');
 
-let hasFlippedCard = false; // Variável para verificar se carta foi virada
+// adiciona o evento de click para cada carta
+cards.forEach(card => card.addEventListener('click', flipCard));
+
+let hasFlippedCard = false; // variável para verificar se a primeira carta foi virada
 let lockBoard = false;
 let firstCard, secondCard;
 let fim = 0;
+let erros = 0;
 
+
+function contarErros() {
+  erros++;
+  document.getElementById("erros").innerHTML = erros;
+}
 
 function flipCard() {
   if (lockBoard) return; // Se o tabuleiro estiver bloqueado, não faz nada
@@ -35,10 +44,13 @@ function checkForMatch() {
   isMatch ? disableCards() : unflipCards();
 }
 
+
+
 function disableCards() {
   // incrementa a variável fim a cada carta combinada, quando chegar a 6, pausa cronomêtro e acaba o jogo
   fim++;
-  fim == 6 ? alert("Parabéns, você ganhou!") : null;
+  fim == 6 ? alert("Parabéns, você ganhou!" + " Tempo: "+returnData(hour)+":"+returnData(minute)+":"+returnData(second)+":"+returnData(millisecond) + " Erros: "+erros) : null;
+
   if (fim == 6) {
     pause();
   }
@@ -54,6 +66,7 @@ function disableCards() {
 // lockBoard = true para que o usuário não possa clicar em outras cartas enquanto as cartas estão sendo desviradas
 // setTimeout para que o usuário possa ver as cartas antes de serem desviradas
 function unflipCards() {
+  contarErros();
   lockBoard = true;
 
   setTimeout(() => {
@@ -79,8 +92,7 @@ function resetBoard() {
   });
 })();
 
-// adiciona o evento de click para cada carta
-cards.forEach(card => card.addEventListener('click', flipCard));
+
 
 //----------------------------------  -------------------------------------------------
 
@@ -160,12 +172,15 @@ function timer() {
   document.getElementById('minute').innerText = returnData(minute);
   document.getElementById('second').innerText = returnData(second);
   document.getElementById('millisecond').innerText = returnData(millisecond);
+
+  
 }
 
 //se o digito for menor que 10 então concatena com um 0 na frente
 function returnData(input) {
   return input >= 10 ? input : `0${input}`
 }
+
 
 
 

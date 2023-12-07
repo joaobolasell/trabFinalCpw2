@@ -2,19 +2,15 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-
   <title>Jogo da Memória</title>
-
   <link rel="stylesheet" href="css/game.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body onload="start()">
-
   
     <header>
         
         <h1>Jogo da Memória</h1>
-
         <h2><p>Jogador <span id="nomeResultado"></span></p></h2>
         
         <h5>Tempo de Jogo</h5>
@@ -22,38 +18,20 @@
           <h3><div>
             <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>:<span id="millisecond">000</span>
           </div> </h3>
-        </div>
+        </div>        
         
-        <h5>Pontuação</h5>
-        <div id="pontuacao">
+        <h5>Erros</h5>
+        <div id="erros">
           <h3><div>
-            <span id="pontos">0</span>
+            <p><span id="erros">0</span></p>
           </div> </h3>
-
+        </div>
 
         <input type="button" value="Reiniciar" id="reset" onClick="window.location.reload()">
         <input type="button" value="Pausar" id="parar" onclick="pausarJogo()">
-        <a href="index.html"><input type="button" value="Sair do Jogo" id="sair" onclick="sairJogo()"></a>
-
-        
-
-
-   
-
-
-
+        <a href="index.html"><input type="button" value="Sair do Jogo" id="sair"></a>
 
     </header>
-    
-
-
-
-
-    
-    
-   
-    
-
 
   <section class="memory-game">
     
@@ -111,17 +89,9 @@
         <img class="back-face" src="img/2.png" alt="Verso da Carta">
     </div>
   
-  </section>
-    
+  </section>    
 
 
-    
-
-
-    <script src="scripts.js"></script>
-    <script src="tempo.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-</body>
+    <script src="scripts.js"></script>    
+    </body>
 </html>
