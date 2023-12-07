@@ -1,39 +1,30 @@
-* {
-  
+
+* {  
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
-    
+    box-sizing: border-box;    
   }
 
 
   header{
     margin: 100px;
-    text-align: center;
-
-    
+    text-align: center;    
   }
   
   body {
     height: 100vh;
     display: flex;
     /* background: #060AB2; */
-    background: black;
-    
+    background: black;    
   }
-
-
-
   
-  .memory-game {
-    
+  .memory-game {   
     width: 640px;
     height: 640px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    perspective: 1000px;
-    
+    perspective: 1000px;    
   }
   
   .memory-card {
@@ -60,7 +51,7 @@
   .back-face {
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 1px;
     position: absolute;
     border-radius: 5px;
     /* background: #1C7CCC; */
@@ -69,7 +60,9 @@
   }
   
   .front-face {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg);    
   }
+
+
 
 

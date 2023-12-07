@@ -1,0 +1,28 @@
+function salvarPontuacao() {
+    let pontuacao = document.getElementById('minute').innerText + ":" + document.getElementById('second').innerText + ":" + document.getElementById('millisecond').innerText;
+    localStorage.setItem("pontuacao", pontuacao);
+    localStorage.setItem("nome", nome);
+    window.location.href = "pontuacao.html";
+  }
+  
+  function mostrarPontuacao() {
+    document.getElementById("nome").innerHTML = localStorage.getItem("nome");
+    document.getElementById("pontuacao").innerHTML = localStorage.getItem("pontuacao");
+  }
+
+  function ranking() {
+    let nome = document.getElementById('nomeResultado').textContent;
+    let tempo = document.getElementById('hour').textContent + ":" + document.getElementById('minute').textContent + ":" + document.getElementById('second').textContent + ":" + document.getElementById('millisecond').textContent;
+    let data = new Date();
+    let dataFormatada = data.getDate() + "/" + (data.getMonth() + 1) + "/" + data.getFullYear();
+  
+    let dados = {
+      nome: nome,
+      tempo: tempo,
+      data: dataFormatada
+    }
+  
+    let dadosJson = JSON.stringify(dados);
+  
+    localStorage.setItem('dados', dadosJson);
+  }
